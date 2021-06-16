@@ -14,10 +14,11 @@ header nav ul {
   margin: 0;
   padding: 0;
   display: flex;
+  flex: 1 0 100%;
   flex-direction: column; /* mobile first - felx dir for the toggle menu (yet to be build) */
   justify-content: space-between;
 }
-header nav li {
+header nav ul li {
   /* margin: 0 15px; */
 
   font-size: 16px;
@@ -30,6 +31,8 @@ header nav li {
   padding: 1em;
   /* flex: auto; */
   text-align: center;
+
+  flex: 1 0 100%; /* grow shrink min-size */
 }
 
 header nav ul li:hover {
@@ -43,9 +46,13 @@ header nav ul li:hover a {
 @media all and (min-width: 600px) {
   header {
     flex-direction: row;
+    align-items: center;
   }
   header nav ul {
     justify-content: center;
     flex-direction: row;
+  }
+  header nav ul li {
+    flex: 1 0 10em; /* grow shrink min-size */
   }
 }
