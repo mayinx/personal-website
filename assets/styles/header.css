@@ -1,38 +1,28 @@
 header .navbar-brand {
-  margin-right: auto; /* push other stuff - i.e. navbar, toggler etc - to the right */
+  margin-right: auto;
 }
 
 header nav {
   display: flex;
-
-  /* background: #222; */
-  /* padding: 5px 20px; */
 }
 
 header nav ul {
+  display: flex;
+  flex: 1 0 100%;
+  flex-direction: column;
+  justify-content: space-between;
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex: 1 0 100%;
-  flex-direction: column; /* mobile first - felx dir for the toggle menu (yet to be build) */
-  justify-content: space-between;
 }
 header nav ul li {
-  /* margin: 0 15px; */
-
   font-size: 16px;
+  white-space: nowrap;
 
-  /* handles havior of potential white-space */
-  white-space: nowrap; /* never ever new lines */
-
-  cursor: pointer;
-  /* padding: 15px 5px; */
   padding: 1em;
-  /* flex: auto; */
   text-align: center;
 
-  flex: 1 0 100%; /* grow shrink min-size */
+  flex: 1 0 100%;
 }
 
 header nav ul li:hover {
@@ -53,6 +43,6 @@ header nav ul li:hover a {
     flex-direction: row;
   }
   header nav ul li {
-    flex: 1 0 10em; /* grow shrink min-size */
+    flex: 1 0 10em;
   }
 }
