@@ -1,31 +1,38 @@
+@import url(https://fonts.googleapis.com/css?family=News+Cycle);
+
 /* defaults */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  --header-height-mobile: 75px;
+  --header-bg-color: #56c6c6;
+  --header-font-color: hsla(200, 0%, 0%, 0.7);
+  --header-nav-item-hover-bg-color: #79d2d2;
+  --header-nav-item-hover-border-color: #14b8b8;
+  /*--header-nav-item-hover-font-color: hsla(200, 0%, 0%, .9);*/
+  --header-nav-item-hover-font-color: #fff;
+  --nav-overlay-bg-color: rgba(0, 0, 0, 0.3);
 }
 
 body {
-  font-family: sans-serif;
+  font-family: "News Cycle";
 }
 
 header {
-  position: relative;
-  top: 0;
-  left: 0;
   z-index: 10;
   width: 100%;
-
+  height: var(--header-height-mobile);
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  flex-direction: column;
-
-  background-color: #f1f1f1;
-  color: green;
-  padding: 35px 100px 0;
-
-  align-items: stretch;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 1rem;
+  background-color: var(--header-bg-color);
+  color: var(--header-font-color);
+  font-weight: bold;
+  font-size: 1.25rem;
 }
 
 footer {
@@ -51,4 +58,186 @@ section {
 
 p {
   margin: 1em;
+}
+
+/* TODO: Move !*/
+
+header a {
+  text-decoration: none;
+  color: hsla(200, 0%, 0%, 0.7);
+}
+
+header a.navbar-brand {
+  display: flex;
+  margin-right: auto;
+  padding-left: 1rem;
+}
+
+header a.navbar-brand h1 {
+  font-size: 1.25rem;
+}
+
+header button.navbar-toggler {
+  display: flex;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  transition: all 0.5s ease-in-out;
+  padding: 0.5rem 1rem;
+}
+
+header button.navbar-toggler:hover {
+  border: 1px solid var(--header-nav-item-hover-border-color);
+  background-color: var(--header-nav-item-hover-bg-color);
+}
+
+header button.navbar-toggler i {
+  font-size: 1.75rem;
+}
+
+header button.navbar-toggler i:before {
+  content: "\f0c9";
+}
+
+header button.navbar-toggler.toggled i:before {
+  content: "\f00d";
+}
+
+nav {
+  visibility: hidden;
+  opacity: 0;
+  justify-content: center;
+  flex: 1 0 100%;
+  position: fixed;
+  top: var(--header-height-mobile);
+  left: 0;
+  right: 0;
+  z-index: 3;
+  background-color: var(--header-bg-color);
+  margin: 10px;
+  border-radius: 10px;
+  transition: visibility 0.3s linear, opacity 0.3s linear;
+}
+
+nav.toggled {
+  display: flex;
+  visibility: visible;
+  opacity: 1;
+}
+
+nav.toggled + #nav-overlay {
+  visibility: visible;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+  align-items: stretch;
+  padding: 5px;
+}
+
+nav ul li {
+  display: flex;
+  list-style: none;
+  border: 1px solid transparent;
+  text-align: start;
+  flex: auto;
+  transition: all 0.3s;
+}
+
+nav ul li a {
+  flex: auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: var(--header-font-color);
+}
+
+header nav ul li i {
+  margin-right: 15px;
+}
+
+header nav ul li:hover {
+  background-color: var(--header-nav-item-hover-bg-color);
+  color: var(--header-nav-item-hover-font-color);
+  border-radius: 10px;
+  border: 1px solid var(--header-nav-item-hover-border-color);
+}
+
+header nav ul li:hover a {
+  color: var(--header-nav-item-hover-font-color);
+}
+
+#nav-overlay {
+  position: fixed;
+  display: block;
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  top: var(--header-height-mobile);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--nav-overlay-bg-color);
+  z-index: 2;
+  cursor: pointer;
+}
+
+main {
+  display: flex;
+}
+
+section {
+  display: flex;
+  margin: 2rem;
+  font-size: 1.1rem;
+}
+
+@media all and (min-width: 600px) {
+  header {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 1.2rem 1.5rem;
+  }
+  header a.navbar-brand {
+    flex: auto;
+  }
+  header button.navbar-toggler {
+    display: none;
+  }
+  header nav {
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    flex: 0 1 45%;
+    position: inherit;
+    background-color: transparent;
+    margin: 0;
+    border-radius: 0;
+  }
+  header nav ul {
+    flex-direction: row;
+    padding: 0;
+  }
+  header nav ul li {
+    flex: auto;
+    justify-content: center;
+    text-align: center;
+  }
+  header nav ul li i {
+    margin-right: 5px;
+  }
+  header nav ul li a {
+    padding: 0.5rem;
+    flex: auto;
+    justify-content: center;
+  }
+  header #nav-overlay,
+  header nav.toggled + #nav-overlay {
+    visibility: hidden;
+  }
 }
