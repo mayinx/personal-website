@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/styles/main.css" />
     <link rel="stylesheet" href="assets/styles/header.css" />
     <link rel="stylesheet" href="assets/styles/footer.css" />
+    <link rel="stylesheet" href="assets/styles/buttons.css" />
     <link rel="stylesheet" href="assets/styles/tags.css" />
     <script src="assets/scripts/main.js"></script>
     <script
@@ -58,34 +59,56 @@
       </header>
 
       <main>
-        <section class="hero">
-          <h2>Life</h2>
+        <section id="page-hero" class="hero">
+          <img
+            id="profile-pic"
+            class="avatar"
+            src="assets/images/DSC01716o.JPG"
+            alt="Avatar Image"
+          />
+
+          <div class="about-me">
+            <p>
+              Hi there! I am <strong>Chris</strong>, full stack Web Developer
+              from Cologne - passionate about technology and currently working
+              as a trainee with neuefische, Hamburg.
+            </p>
+            <p class="hire-me-line">
+              Check out this site to learn more about me - or drop me a line by
+              hitting the 'Hire me!' button, if you need a web dev!
+            </p>
+            <p class="call-to-action">
+              <button
+                id="learn-more-action"
+                class="btn blue rounded"
+                role="button"
+                href="#resumee"
+              >
+                Learn more!
+              </button>
+              <button
+                id="hire-me-action"
+                class="btn green rounded"
+                role="button"
+                href="#contact"
+              >
+                Hire me!
+              </button>
+            </p>
+          </div>
+
+          <div id="avatar-overlay"></div>
+
+          <!--<h2>Life</h2>
           <h3>...is about creation</h3>
           <q>
             When you don't create things, you become defined by your tastes
             rather than ability. Your tastes only narrow & exclude people. So
             create.<br />--- WHY the lucky stiff</q
-          >
-
-          <div class="hero-inner">
-            <div
-              class="avatar"
-              style="background-image: url('/avatars/avatar.jpg')"
-            ></div>
-            <div class="about-me">
-              <p>
-                Hi there! I am <strong>Chris</strong>. I'm a full stack web
-                developer, passionate about technology and currently working as
-                a trainee with neuefische.
-              </p>
-              <a class="btn btn-outline-primary" role="button" href="#"
-                >Hire me</a
-              >
-            </div>
-          </div>
+          >-->
         </section>
 
-        <article class="resumee">
+        <article id="resumee" class="resumee">
           <section class="photo">
             <h2>Pic</h2>
             <h3>Fancy Section Subhead...</h3>
@@ -159,6 +182,16 @@
             <section class="interail-europe">
               Backpacking Europe via Interail
             </section>
+          </section>
+
+          <section id="contact" class="contact">
+            <h2>Contact me</h2>
+            <h3>Feel free to drop me a line or two...</h3>
+            <p>
+              Placeholder fro a fancy Contact Form yet to be implemented - plus:
+              I did form data handling only with a ruby (rails) managed backend
+              so far, sigh...
+            </p>
           </section>
         </article>
       </main>
