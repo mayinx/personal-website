@@ -5,6 +5,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+
+  /* header related vars */
   --header-height-mobile: 75px;
   --header-bg-color: #56c6c6;
   --header-font-color: hsla(200, 0%, 0%, 0.7);
@@ -13,6 +15,10 @@
   /*--header-nav-item-hover-font-color: hsla(200, 0%, 0%, .9);*/
   --header-nav-item-hover-font-color: #fff;
   --nav-overlay-bg-color: rgba(0, 0, 0, 0.3);
+
+  /*sectionn related vars */
+  --section-icon-circle-color: cornflowerblue;
+  --section-icon-color: white;
 }
 
 body {
@@ -75,6 +81,13 @@ footer {
   padding: 60px 0;
 }
 
+article.resumee {
+  display: flex;
+  flex-direction: column;
+  /* grid-template-columns: repeat(3, minmax(150px, 1fr)); */
+  grid-template-columns: minmax(200px, 1fr);
+}
+
 footer .icon {
   color: #fff;
 }
@@ -84,12 +97,37 @@ section {
   flex-direction: column;
   align-items: center;
   padding: 125px 100px;
+
+  margin: 2rem;
+  font-size: 1.1rem;
+
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+
+section:not(.hero) {
+  /* border: 1px solid gray; */
 }
 
 section.hero {
   background-color: var(--header-bg-color);
   margin: 0;
 }
+
+section .circle-icon {
+  color: var(--section-icon-circle-color);
+}
+
+section .section-icon {
+  color: var(--section-icon-color);
+}
+
+/*.section-icon-wrapper {
+  border-radius: 100%;
+  border: 1px solid gray;
+  width: 36px;
+  height: 36px;
+  text-align: center;
+}*/
 
 p {
   margin: 1em;
@@ -125,6 +163,7 @@ header button.navbar-toggler {
 header button.navbar-toggler:hover {
   border: 1px solid var(--header-nav-item-hover-border-color);
   background-color: var(--header-nav-item-hover-bg-color);
+  color: #fff;
 }
 
 header button.navbar-toggler i {
@@ -222,13 +261,8 @@ header nav ul li:hover a {
   cursor: pointer;
 }
 
-section {
-  display: flex;
-  margin: 2rem;
-  font-size: 1.1rem;
-}
-
 @media all and (min-width: 600px) {
+  /* header related */
   header {
     flex-direction: row;
     flex-wrap: nowrap;
@@ -270,5 +304,21 @@ section {
   header #nav-overlay,
   header nav.toggled + #nav-overlay {
     visibility: hidden;
+  }
+
+  /* resumee / sections related */
+
+  article.resumee {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+  }
+}
+
+@media all and (min-width: 1500px) {
+  article.resumee {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
   }
 }
