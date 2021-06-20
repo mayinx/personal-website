@@ -1,6 +1,8 @@
+/* TODO: Cleanup base by moving semnatically related stiff into the appropriate files in asstes/styles/... */
+
 @import url(https://fonts.googleapis.com/css?family=News+Cycle);
 
-/* defaults */
+/* Defaultsto reset User Agent Settings + css vars */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,13 +14,18 @@
   --header-font-color: hsla(200, 0%, 0%, 0.7);
   --header-nav-item-hover-bg-color: #79d2d2;
   --header-nav-item-hover-border-color: #14b8b8;
-  /*--header-nav-item-hover-font-color: hsla(200, 0%, 0%, .9);*/
   --header-nav-item-hover-font-color: #fff;
   --nav-overlay-bg-color: rgba(0, 0, 0, 0.3);
 
-  /*sectionn related vars */
+  /*section related vars */
   --section-icon-circle-color: cornflowerblue;
   --section-icon-color: white;
+}
+
+/* toggled as needded on body tag to prevent / allow scrolling */
+.noscroll {
+  height: 100%;
+  overflow: hidden;
 }
 
 body {
@@ -28,17 +35,10 @@ body {
 #container {
   width: 100%;
   height: 100vh;
-  /*  background: yellow;*/
   display: grid;
-  /*  grid-template-rows: 80px 600px 80px;
-  grid-template-columns: 0.5fr 1fr;*/
-
   grid-template-rows: auto 1fr auto;
-  /*grid-template-columns: auto;*/
-
-  /* To prevent child content  exeeding the grid-container! */
+  /* To prevent child content exceeding the grid-container! (and: yeah - I gonna need that comment to learn ;-) */
   grid-template-columns: minmax(0, 1fr);
-  /*  grid-template-columns: 0.5fr 1fr;  */
 }
 
 header {
@@ -63,7 +63,6 @@ header {
 main {
   grid-column: 1;
   grid-row: 2;
-
   display: flex;
   flex-direction: column;
 }
@@ -84,7 +83,6 @@ footer {
 article.resumee {
   display: flex;
   flex-direction: column;
-  /* grid-template-columns: repeat(3, minmax(150px, 1fr)); */
   grid-template-columns: minmax(200px, 1fr);
 }
 
@@ -102,10 +100,6 @@ section {
   font-size: 1.1rem;
 
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
-}
-
-section:not(.hero) {
-  /* border: 1px solid gray; */
 }
 
 section.hero {
@@ -143,16 +137,10 @@ section .hero button {
   left: 0;
   right: 0;
   bottom: 0;
-  /* background-color: var(--nav-overlay-bg-color); */
-  /* background-color: rgba(0, 0, 0, 0.7); */
   background-color: var(--header-nav-item-hover-bg-color);
   background-color: var(--header-bg-color);
-  /* background-color: rgb(121 210 210 / 50%); */
   z-index: 2;
   cursor: pointer;
-  /* opacity: 1; */
-
-  /* transition: transform 0.7s ease-in-out; */
 }
 
 section.hero .about-me {
@@ -160,9 +148,8 @@ section.hero .about-me {
   background: transparent;
   text-align: center;
 
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   transition: all 0.5s ease-in-out;
-  /* transition: transform 0.7s ease-in-out; */
 }
 
 section.hero .about-me .hire-me-line {
@@ -177,29 +164,23 @@ section.hero .about-me .call-to-action {
   opacity: 0;
 }
 
-/* section.hero .avatar:hover { */
 section.hero.avatar-overlay-togggled .avatar {
   transform: rotate(33deg) scale(1.3);
   z-index: 30;
 }
 
-/* section.hero .avatar:hover ~ #avatar-overlay { */
 section.hero.avatar-overlay-togggled #avatar-overlay {
   visibility: visible;
 
-  /* opacity: 1; */
   z-index: 2;
 }
 
-/* section.hero .avatar:hover ~ .about-me { */
 section.hero.avatar-overlay-togggled .about-me {
   margin-top: 2rem;
   z-index: 31;
   font-size: 1.3rem;
 }
 
-/* section.hero .avatar:hover ~ .about-me .hire-me-line,
-section.hero .avatar:hover ~ .about-me .hire-me-action { */
 section.hero.avatar-overlay-togggled .about-me .hire-me-line,
 section.hero.avatar-overlay-togggled .about-me .call-to-action {
   display: block;
@@ -214,14 +195,6 @@ section .circle-icon {
 section .section-icon {
   color: var(--section-icon-color);
 }
-
-/*.section-icon-wrapper {
-  border-radius: 100%;
-  border: 1px solid gray;
-  width: 36px;
-  height: 36px;
-  text-align: center;
-}*/
 
 p {
   margin: 1em;
@@ -355,7 +328,7 @@ header nav ul li:hover a {
   cursor: pointer;
 }
 
-@media all and (min-width: 600px) {
+@media all and (min-width: 700px) {
   /* header related */
   header {
     flex-direction: row;
@@ -400,6 +373,16 @@ header nav ul li:hover a {
     visibility: hidden;
   }
 
+  /* hero related */
+
+  section.hero .about-me {
+    font-size: 2rem;
+  }
+
+  section.hero.avatar-overlay-togggled .about-me {
+    font-size: 1.5rem;
+  }
+
   /* resumee / sections related */
 
   article.resumee {
@@ -410,6 +393,11 @@ header nav ul li:hover a {
 }
 
 @media all and (min-width: 1500px) {
+  section.hero .about-me {
+    font-size: 2rem;
+    width: 50%;
+  }
+
   article.resumee {
     display: grid;
     grid-gap: 1rem;
