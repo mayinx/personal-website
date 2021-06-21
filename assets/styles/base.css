@@ -22,6 +22,10 @@
   --section-icon-color: white;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* toggled as needded on body tag to prevent / allow scrolling */
 .noscroll {
   height: 100%;
@@ -124,13 +128,15 @@ section.hero .avatar {
   transition: transform 0.7s ease-in-out;
 }
 
-section .hero button {
+/* section .hero button {
   font-family: monospace;
-}
+} */
+
 #avatar-overlay {
   position: fixed;
   display: block;
   visibility: hidden;
+  opacity: 0; /*important - otehrwise child elements like the overlay close btn linger behind until they finally vanish */
   width: 100%;
   height: 100%;
   top: var(--header-height-mobile);
@@ -141,6 +147,29 @@ section .hero button {
   background-color: var(--header-bg-color);
   z-index: 2;
   cursor: pointer;
+
+  /* transition: all 0.7s ease-in-out; */
+}
+
+#avatar-overlay button.close-overlay:hover {
+  border: 1px solid var(--header-nav-item-hover-border-color);
+  background-color: var(--header-nav-item-hover-bg-color);
+  color: #fff;
+}
+
+#avatar-overlay button.close-overlay {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+
+  font-size: 1.2rem;
+
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  transition: all 0.5s ease-in-out;
+  padding: 0.5rem 1rem;
 }
 
 section.hero .about-me {
@@ -171,7 +200,7 @@ section.hero.avatar-overlay-togggled .avatar {
 
 section.hero.avatar-overlay-togggled #avatar-overlay {
   visibility: visible;
-
+  opacity: 1;
   z-index: 2;
 }
 
@@ -299,7 +328,8 @@ nav ul li a {
 }
 
 header nav ul li i {
-  margin-right: 15px;
+  /* margin-right: 15px; */
+  margin-right: 1rem;
 }
 
 header nav ul li:hover {
@@ -361,7 +391,7 @@ header nav ul li:hover a {
     text-align: center;
   }
   header nav ul li i {
-    margin-right: 5px;
+    margin-right: 1rem;
   }
   header nav ul li a {
     padding: 0.5rem;
