@@ -7,6 +7,7 @@ window.onload = function () {
   let navbar = document.getElementById("top-navbar");
   let navbarTrigger = document.getElementById("navbar-toggler");
   let navOverlay = document.getElementById("nav-overlay");
+  let avtarOverlayCloseBtn = document.getElementById("close-overlay");
 
   let avatar = document.getElementById("profile-pic");
   let heroSection = document.getElementById("page-hero");
@@ -24,8 +25,13 @@ window.onload = function () {
     hideAvatarOverlay();
   });
 
+  /** overlay close btn */
+  avtarOverlayCloseBtn.addEventListener("click", function (e) {
+    hideAvatarOverlay();
+  });
+
   /* Set active nav item + toggle navbar-overlay (i.e. page-overlay caused by navbar interaction
-   * - still looking for the aappropriate wording here - so ...) */
+   * - still looking for the appropriate wording here - so ...) */
   document.querySelectorAll(".nav-link").forEach((navLink) => {
     navLink.addEventListener("click", function (e) {
       navbar.classList.toggle("toggled");
@@ -48,20 +54,27 @@ window.onload = function () {
   function toggleAvatarOverlay() {
     heroSection.classList.toggle("avatar-overlay-togggled");
     document.body.classList.toggle("noscroll");
-    console.log("-- yo - avatar overlay  togggled!");
+  }
+  function showAvatarOverlay() {
+    if (!heroSection.classList.contains("avatar-overlay-togggled")) {
+      toggleAvatarOverlay();
+    }
   }
 
   function hideAvatarOverlay() {
-    heroSection.classList.remove("avatar-overlay-togggled");
-    document.body.classList.remove("noscroll");
-    console.log("-- yo - avatar overlay  removed!");
+    // heroSection.classList.remove("avatar-overlay-togggled");
+    // document.body.classList.remove("noscroll");
+    // console.log("-- yo - avatar overlay  removed!");
+    if (heroSection.classList.contains("avatar-overlay-togggled")) {
+      toggleAvatarOverlay();
+    }
   }
 
   /* TODO: Which events must be catched to ensure we cover all devices ?!
    * Check this out f.i.:
    * https://developer.mozilla.org/en-US/docs/Web/API/Touch_events/Supporting_both_TouchEvent_and_MouseEvent  */
   ["mouseover", "touchmove"].forEach(function (e) {
-    avatar.addEventListener(e, toggleAvatarOverlay);
+    avatar.addEventListener(e, showAvatarOverlay);
     // e.preventDefault();
   });
 
