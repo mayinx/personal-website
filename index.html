@@ -5,9 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="assets/styles/main.css" />
+    <link rel="stylesheet" href="assets/styles/base.css" />
     <link rel="stylesheet" href="assets/styles/header.css" />
     <link rel="stylesheet" href="assets/styles/footer.css" />
+    <link rel="stylesheet" href="assets/styles/buttons.css" />
+    <link rel="stylesheet" href="assets/styles/tags.css" />
+    <script src="assets/scripts/main.js"></script>
     <script
       src="https://kit.fontawesome.com/0069c24e64.js"
       crossorigin="anonymous"
@@ -16,93 +19,321 @@
     <title>Personal Website Christian Daum</title>
   </head>
   <body>
-    <header>
-      <a class="navbar-brand" href="">
-        <h1>Christian Daum | WebDev</h1>
-      </a>
-      <button class="navbar-toggler">
-        <span class="toggler-icon"></span>
-      </button>
-
-      <nav class="navbar">
-        <ul>
-          <li>
-            <a href="">Skills</a>
-          </li>
-          <li>
-            <a href="">Interests</a>
-          </li>
-          <li>
-            <a href="">Contact</a>
-          </li>
-          <li>
-            <a href="">Bio</a>
-          </li>
-          <li>
-            <a href="">Travels</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-
-    <section class="hero">
-      <h2>Hero</h2>
-      <h3>Fancy Section Subhead...</h3>
-    </section>
-
-    <section class="photo">
-      <h2>Pic</h2>
-      <h3>Fancy Section Subhead...</h3>
-    </section>
-
-    <section class="skills">
-      <h2>Skills</h2>
-      <h3>Fancy Section Subhead...</h3>
-    </section>
-
-    <section class="interests">
-      <h2>Interests</h2>
-      <h3>Fancy Section Subhead...</h3>
-    </section>
-
-    <section class="contact">
-      <h2>Contact</h2>
-      <h3>Fancy Section Subhead...</h3>
-    </section>
-
-    <section class="links">
-      <h2>Links</h2>
-      <h3>Fancy Section Subhead...</h3>
-    </section>
-
-    <section class="about-me">
-      <h2>About Me, Myself, and I</h2>
-      <h3>Fancy Section Subhead...</h3>
-    </section>
-
-    <section class="cv">
-      <h2>CV</h2>
-      <h3>Fancy Section Subhead...</h3>
-      <section class="work">work</section>
-      <section class="education">education</section>
-    </section>
-
-    <section class="travels">
-      <h2>Travels</h2>
-      <h3>Fancy Section Subhead...</h3>
-
-      <section class="backpacking-nz">Backpacking New Zealand</section>
-      <section class="interail-italy">Backpacking Italy</section>
-      <section class="interail-europe">Backpacking Europe via Interail</section>
-    </section>
-
-    <footer class="footer">
-      <p>Made with love by Christian Daum</p>
-      <p>
-        <a class="icon" href="https://github.com/mayinx">
-          <i class="fa fa-github fa-2x"></i>
+    <div id="container">
+      <header>
+        <a class="navbar-brand" href="#">
+          <h1>Christian Daum | WebDev</h1>
         </a>
-      </p>
-    </footer>
+        <button id="navbar-toggler" class="navbar-toggler" type="button">
+          <i class="fas fa-bars"></i>
+        </button>
+        <nav id="top-navbar">
+          <ul>
+            <li>
+              <a class="nav-link" href="#about">
+                <i class="fas fa-user-ninja"></i>
+                <span> About </span>
+              </a>
+            </li>
+            <li>
+              <a class="nav-link" href="#skills">
+                <i class="fas fa-code"></i>
+                <span> Skills </span>
+              </a>
+            </li>
+            <li>
+              <a class="nav-link" href="#interests">
+                <i class="fas fa-bookmark"></i>
+                <span> Interests </span>
+              </a>
+            </li>
+            <li>
+              <a class="nav-link" href="#cv">
+                <i class="fas fa-wave-square"></i>
+                <span> Bio </span>
+              </a>
+            </li>
+            <li>
+              <a class="nav-link" href="#contact">
+                <i class="fas fa-address-card"></i>
+                <span> Contact </span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div id="nav-overlay"></div>
+      </header>
+
+      <main>
+        <section id="page-hero" class="hero">
+          <img
+            id="profile-pic"
+            class="avatar"
+            src="assets/images/DSC01716o.JPG"
+            alt="Avatar Image"
+          />
+
+          <div class="about-me">
+            <p>
+              Hi there! I am <strong>Chris</strong>, full stack Web Developer
+              from Cologne - passionate about technology and currently working
+              as a trainee with neuefische, Hamburg.
+            </p>
+            <p class="hire-me-line">
+              Check out this site to learn more about me - or drop me a line by
+              hitting the 'Hire me!' button, if you need a web dev!
+            </p>
+            <p class="call-to-action">
+              <button
+                id="learn-more-action"
+                class="btn blue rounded"
+                role="button"
+                href="#resumee"
+              >
+                Learn more!
+              </button>
+              <button
+                id="hire-me-action"
+                class="btn green rounded"
+                role="button"
+                href="#contact"
+              >
+                Hire me!
+              </button>
+            </p>
+          </div>
+
+          <div id="avatar-overlay"></div>
+        </section>
+
+        <article id="resumee" class="resumee">
+          <section id="about" class="about-me">
+            <span class="fa-stack fa-lg">
+              <i class="circle-icon fa fa-circle fa-stack-2x"></i>
+              <i
+                class="section-icon fas fa-user-ninja fa-stack-1x fa-inverse"
+              ></i>
+            </span>
+
+            <h2>About Me, Myself, and I</h2>
+            <h3>Since you asked...</h3>
+            <p>
+              ...after my apprenticeship as an Advertising Merchant and during
+              my following studies in Media Science (with focus on computer
+              science) I had quite a few and diverse jobs that broaden my
+              horizon, to say the least:
+            </p>
+            <p>
+              Be it as Project manager, Conceptioner and Consultant in the field
+              of Online and Strategic Marketing, Web Developer, Author of
+              e-Learning Tutorials (CBT/WBT), Mobile phone tester for Vodafone
+              (Acceptance & Terminal Testing), Student Trainee for WDR
+              (Westdeutscher Rundfunk) in the nightshift - or as Intern for
+              various Agencies that worked in Print, Webdesign, Advertising &
+              Marketing...
+            </p>
+            <p>
+              But let's not forget my professesional, highly IT-relevant
+              expertise I gained while I was working gloriously as „Stacker“ in
+              Apple & Kiwifruit Packhouses and as „Thinner“ & „Picker“ on Apple
+              Orchards in New Zealand, where I spent 1 year traveling around
+              that awesome country (both the North & South Island) with a
+              Stray-Bus Hop-On-Hop-Off-Ticket. I mean: There was this one
+              incident, where I managed to talk the apple packhouse owner to let
+              me use his one and only, most holy and sloooow internet connection
+              (probably the only one on the south island), so that I could
+              finally upload my first Rails-Project to the cloud (a photo blog
+              for a university project). That guy even explained to me what a
+              staging area was! But other jobs - like Stacker in a fish factory
+              (hm) - didn't add any IT-value at all, I must admit (but we saw
+              Dolphins during the shift!).
+            </p>
+            <p>
+              Neither did other jobs I had to perform during my studies in
+              Germany, be it as Seller in a Bookstore, Packer in a screw
+              factory, Newspaper Subscription Promoter, Moving Helper, Stacker
+              in a warehouse, potato harvest helper - or as proffesional human
+              cardboard shredder (like in: All day, by hand! Rooms full of
+              cardboards in all sizes... That's where I got my Bruce Lee Tiger
+              Claw...)
+            </p>
+            <p>
+              But those jobs teached me other stuff - like the Bruce Lee Tiger
+              Claw f. i. ... that it's possible to sell 10 Books of the
+              Shadowrun-Book-Series to one person ... or how to get over sore
+              muscles ... and ... people skills of course!
+            </p>
+            <p>
+              Long story short (you still with me? Incredible!): After
+              graduating in Media Studies I started my Doctorial Studies in the
+              same field. But after I become the proud father of a wonderful son
+              I had enough and dropped out to start a career as Web Developer.
+              Which was a great decision, since I could join a neuefische Web
+              Developer Bootcamp right away (after a short Corona bump in the
+              road) to extend my slightly outdated knowledge in that field...
+            </p>
+          </section>
+
+          <section id="skills" class="skills">
+            <span class="fa-stack fa-lg">
+              <i class="circle-icon fa fa-circle fa-stack-2x"></i>
+              <i class="section-icon fas fa-code fa-stack-1x fa-inverse"></i>
+            </span>
+
+            <h2>Skills</h2>
+            <h3>What I'm quite good at...</h3>
+
+            <p>
+              Technologies and Tools (yet to be structured and prioritized)...
+            </p>
+
+            <div class="tag-list">
+              <span class="tag medium blue">Ruby</span>
+              <span class="tag medium blue">Ruby on Rails</span>
+              <span class="tag medium blue">Internal DSLs</span>
+              <span class="tag medium blue">Metaprogramming</span>
+              <span class="tag medium blue">HTML</span>
+              <span class="tag medium blue">XML</span>
+              <span class="tag medium blue">YML</span>
+              <span class="tag medium blue">JSON</span>
+              <span class="tag medium blue">CSS</span>
+              <span class="tag medium blue">SCSS</span>
+              <span class="tag medium blue">Git</span>
+              <span class="tag medium blue">Github</span>
+              <span class="tag medium blue">AJAX / JS (jQuery)</span>
+              <span class="tag medium blue">TDD</span>
+              <span class="tag medium blue">Bulma</span>
+              <span class="tag medium blue">Bootstrap</span>
+              <span class="tag medium blue">Bootstrap Studio</span>
+              <span class="tag medium blue">Adobe Photoshop</span>
+              <span class="tag medium blue">Gimp</span>
+              <span class="tag medium blue">VBA</span>
+              <span class="tag medium blue">MS Access</span>
+              <span class="tag medium blue">SQLite</span>
+              <span class="tag medium blue">PostgreSQL</span>
+              <span class="tag medium blue">MySQL</span>
+              <span class="tag medium blue">Adobe Captivate</span>
+              <span class="tag medium blue">Audacity</span>
+              <span class="tag medium blue">Adobe InDesign</span>
+              <span class="tag medium blue">Scribus</span>
+              <span class="tag medium blue">MS Office</span>
+              <span class="tag medium blue">Open Office</span>
+              <span class="tag medium blue">Linux (Ubuntu)</span>
+              <span class="tag medium blue">MS Windows</span>
+            </div>
+          </section>
+
+          <section id="interests" class="interests">
+            <span class="fa-stack fa-lg">
+              <i class="circle-icon fa fa-circle fa-stack-2x"></i>
+              <i
+                class="section-icon fas fa-bookmark fa-stack-1x fa-inverse"
+              ></i>
+            </span>
+
+            <h2>Interests</h2>
+            <h3>What Id' like to explore or deepen next...</h3>
+            <p>I really wanna know this stuff...</p>
+
+            <div class="tag-list">
+              <span class="tag medium blue">React</span>
+              <span class="tag medium blue">Node.js</span>
+              <span class="tag medium blue">Vanilla JavaScript</span>
+              <span
+                class="tag medium blue"
+                title="If that exists? Would be awesome to create some javascript-based DSLs!"
+                >JavaScript Metaprogramming</span
+              >
+              <span
+                class="tag medium blue"
+                title="Yeah - that dead laguage! Why? Hm... because..."
+                >Latin</span
+              >
+              <span class="tag medium blue">Bootstrap</span>
+              <span class="tag medium blue">Git(hub) Workflows</span>
+              <span class="tag medium blue">Interaction of Rails & React</span>
+              <span class="tag medium blue">User Interface Design</span>
+            </div>
+          </section>
+
+          <section class="contact">
+            <span class="fa-stack fa-lg">
+              <i class="circle-icon fa fa-circle fa-stack-2x"></i>
+              <i
+                class="section-icon fas fa-address-card fa-stack-1x fa-inverse"
+              ></i>
+            </span>
+            <h2>Contact</h2>
+            <h3>Fancy Section Subhead...</h3>
+          </section>
+
+          <section class="links">
+            <h2>Links</h2>
+            <h3>Fancy Section Subhead...</h3>
+          </section>
+
+          <section class="pics">
+            <h2>Pics</h2>
+            <h3>Fancy Section Subhead...</h3>
+          </section>
+
+          <section id="cv" class="cv">
+            <span class="fa-stack fa-lg">
+              <i class="circle-icon fa fa-circle fa-stack-2x"></i>
+              <i
+                class="section-icon fas fa-wave-square fa-stack-1x fa-inverse"
+              ></i>
+            </span>
+
+            <h2>CV</h2>
+            <h3>Fancy Section Subhead...</h3>
+
+            <section class="work">work</section>
+            <section class="education">education</section>
+          </section>
+
+          <section class="travels">
+            <span class="fa-stack fa-lg">
+              <i class="circle-icon fa fa-circle fa-stack-2x"></i>
+              <i class="section-icon fas fa-bus-alt fa-stack-1x fa-inverse"></i>
+            </span>
+
+            <h2>Travels</h2>
+            <h3>Fancy Section Subhead...</h3>
+
+            <section class="backpacking-nz">Backpacking New Zealand</section>
+            <section class="interail-italy">Backpacking Italy</section>
+            <section class="interail-europe">
+              Backpacking Europe via Interail
+            </section>
+          </section>
+
+          <section id="contact" class="contact">
+            <span class="fa-stack fa-lg">
+              <i class="circle-icon fa fa-circle fa-stack-2x"></i>
+              <i
+                class="section-icon fas fa-address-card fa-stack-1x fa-inverse"
+              ></i>
+            </span>
+
+            <h2>Contact me</h2>
+            <h3>Feel free to drop me a line or two...</h3>
+            <p>
+              Placeholder for a fancy Contact Form yet to be implemented - plus:
+              I did form data handling only with a ruby (rails) managed backend
+              so far, sigh...
+            </p>
+          </section>
+        </article>
+      </main>
+      <footer class="footer">
+        <p>Made with love by Christian Daum</p>
+        <p>
+          <a class="icon" href="https://github.com/mayinx">
+            <i class="fa fa-github fa-2x"></i>
+          </a>
+        </p>
+      </footer>
+    </div>
   </body>
 </html>
